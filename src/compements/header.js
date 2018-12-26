@@ -16,7 +16,7 @@ class Headers extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=9b367754c0ba4126a744acb9101223c9')
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&apiKey=9b367754c0ba4126a744acb9101223c9')
         .then((response)=>{
             this.setState({
                 article1: response.data.articles[0].title,
