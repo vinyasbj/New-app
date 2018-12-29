@@ -25,7 +25,7 @@ class Headers extends React.Component{
                 article4: response.data.articles[3].title,
                 article5: response.data.articles[4].title,
                 article6: response.data.articles[5].title,
-                article7: response.data.articles[12].title,
+                article7: response.data.articles[6].title,
                 article8: response.data.articles[7].title,
                 article9: response.data.articles[8].title,
                 article10: response.data.articles[9].title,
@@ -35,15 +35,12 @@ class Headers extends React.Component{
                 image4: response.data.articles[3].urlToImage,
                 image5: response.data.articles[4].urlToImage,
                 image6: response.data.articles[5].urlToImage,
-                image7: response.data.articles[12].urlToImage,
+                image7: response.data.articles[6].urlToImage,
                 image8: response.data.articles[7].urlToImage,
                 image9: response.data.articles[8].urlToImage,
                 image10: response.data.articles[9].urlToImage
 
             })
-            console.log('====================================')
-            console.log(response.data.articles[0])
-            console.log('====================================')
         })
     }
 
@@ -118,7 +115,7 @@ class Headers extends React.Component{
                             <Mask overlay="black-light" />
                             </View>
                             <CarouselCaption>
-                            <h3 className="h3-responsive">{this.state.article8}</h3>
+                            <h3 className="h3-responsive">{this.state.article7}</h3>
                             {/* <p>First text</p> */}
                             </CarouselCaption>
                         </CarouselItem>
