@@ -13,39 +13,33 @@ class Cards extends React.Component{
         this.state = {
             sports: '',
             techcrunch: '',
-            politics: '',
+            science: '',
             gadgets: ''
         }
     }
     componentDidMount(props){
-        axios.get('https://newsapi.org/v2/everything?q=gadgets&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
             this.setState({
                 gadgets: response.data.articles[0]
             })
         })
 
-        axios.get('https://newsapi.org/v2/everything?q=sports&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
             this.setState({
                 sports: response.data.articles[1]
             })
         })
 
-        axios.get('https://newsapi.org/v2/everything?q=techcrunch&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
             this.setState({
                 techcrunch: response.data.articles[0]
             })
         })
 
-        axios.get('https://newsapi.org/v2/everything?q=politics&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
+        axios.get('https://newsapi.org/v2/top-headlines?country=in&category=science&apiKey=9b367754c0ba4126a744acb9101223c9').then((response)=> {
             this.setState({
-                politics: response.data.articles[0]
+                science: response.data.articles[0]
             })
-            console.log('====================================')
-            console.log(this.state.politics)
-            console.log(this.state.sports)
-            console.log(this.state.techcrunch)
-            console.log(this.state.gadgets)
-            console.log('====================================')
         })
     }
     render(){
@@ -71,11 +65,11 @@ class Cards extends React.Component{
                         </CardBody>
                     </Card>
                     <Card>
-                        <CardImg top width="100%" style={img}src={this.state.politics.urlToImage} alt="Card image cap" />
+                        <CardImg top width="100%" style={img}src={this.state.science.urlToImage} alt="Card image cap" />
                         <CardBody>
-                        <CardTitle>Politics</CardTitle>
-                        <CardSubtitle>{this.state.politics.title}</CardSubtitle>
-                        <CardText>{this.state.politics.description}</CardText>
+                        <CardTitle>Science</CardTitle>
+                        <CardSubtitle>{this.state.science.title}</CardSubtitle>
+                        <CardText>{this.state.science.description}</CardText>
                         <Button>Button</Button>
                         </CardBody>
                     </Card>
